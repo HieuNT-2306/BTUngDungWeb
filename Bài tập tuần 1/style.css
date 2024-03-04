@@ -1,0 +1,230 @@
+* {
+    font-family: sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.navigator{
+    height: 50px;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+.main, .graph, .navigator {
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+.main {
+    height: 120vh;
+}
+.graph {
+    height: 50vh;
+}
+.graph-left, .graph-right {
+    width: 50%;
+    height: 100%;
+}
+.header, .footer {
+    background-color: rgb(192, 33, 53);
+    box-sizing: border-box;
+    padding: 18px 10% 0px 10%;
+    width: 100%;
+    margin: none;
+}
+.header {
+    height: 140px;
+}
+.footer {
+    background: url(https://ctsv.hust.edu.vn/static/img/footer.1e5dd709.jpeg);
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    height: 250px;
+}
+.header .top{
+    display: flex;
+    justify-content: space-between;
+}
+.header .top .login {
+    width: 250px;
+    height: 70px;
+    display: flex;
+}
+.login p {
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.header .navbar {
+    width: 100%;
+    height: 50px;
+}
+.header .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.header .navbar li {
+    float: left;
+}
+.navbar a {
+    display: block;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}  
+.logo {
+    background: url(https://ctsv.hust.edu.vn/static/img/Logobk.2a30b706.png);
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height:70px;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+}
+.right {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.avatar {
+    position: relative;
+    width: 90%;
+    border-radius: 10px;
+    margin: 20px;
+    height: 55%;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+}
+.navigator div {
+    color: rgb(192, 33, 53);
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: auto;
+    margin: 1px 5px;
+    font-weight: bold;
+    text-align: center;
+}
+.status {
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+    width: 90%;
+    border-radius: 15px;
+    margin: 20px 10px;
+    box-sizing: border-box;
+    height: 25%;
+    padding: 20px;
+}
+.status-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(224, 217, 217);
+}
+.status-navbar li {
+    float: left;
+    border:1px solid rgb(224, 217, 217);
+    border-left: none;
+    border-bottom: none;
+}
+.status-navbar li:first-child{
+    border-top-left-radius: 5px;
+    border-left:1px solid rgb(224, 217, 217) ;
+}
+.status-navbar li:last-child{
+    border-top-right-radius: 5px;
+}
+.status-navbar li a {
+    display: block;
+    color: rgb(192, 33, 53);
+    font-size: 14px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.status-navbar li a:not(.active) {
+    color: black;
+} 
+.status-navbar li a:not(.active):hover{
+    color: rgb(192, 33, 53);
+}
+.info {
+    width: 95%;
+    border-radius: 10px;
+    margin: 50px 20px;
+    height: 95%;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    gap: 10px
+}
+.info .text {
+    padding-left: 10px;
+    box-sizing: border-box;
+    padding-bottom: 8px;
+}
+.bold {
+    font-weight: bold;
+    padding-top: 10px;
+    width: 50%;
+}
+.banner {
+    background: url(https://dean2020.edu.vn/wp-content/uploads/2019/06/hinh-6.png?fbclid=IwAR0lglhr6oJ5eQSRpGiweKiOS5ufU-k5ZFFVUu3MSm247pY_DVaq9Ef6m58);
+    width: 100%;
+    height: 50%;
+    border-radius: 15px 15px 0 0;
+}
+.avt-info {
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+.avt-info p {
+    font-size: 14px;
+}
+.avt {
+    position: absolute;
+    background: url(Avatar.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%);
+    top: 40%;
+    border: white 5px solid;
+}
+
+.info {
+    padding: 20px;
+    width: 95%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 50px 20px;
+    height: 95%;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+}
+
+.footer div {
+    text-align: center;
+    color: gray;
+}
