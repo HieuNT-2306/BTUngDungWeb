@@ -23,13 +23,14 @@ body {
     justify-content: space-between;
 }
 .row {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 15px 15px 0px 15px;
+    padding: 7px 15px 7px 15px;
 }
 
 .input50w, .input100w, .input33w {
-    width: 48%;
+    width: 100%;
     background-color: rgb(240, 240, 240);
     height: 40px;
     border: 1px solid rgb(207, 207, 207);
@@ -74,4 +75,53 @@ body {
 }
 .alert {
     border: 1px solid red;
+}
+.chatbox, .chatbox-left {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(-105%,-50%);
+    width: 250px;
+    padding-left: 10px;
+    background-color: #984a3b; 
+    color: #fff;
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    display: inline-block;
+}
+.chatbox-left{
+    left: 6%;
+    transform: translate(155%,-50%);
+}
+.nose, .nose-left {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border: 10px solid transparent;
+    border-left-color: #984a3b;
+}
+.nose-left {
+    left: -18px;
+    border-left-color: transparent;
+    border-right-color: #984a3b;
+}
+.fa-input-text {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 90%;
+}
+.wide {
+    left: 92%;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
 }

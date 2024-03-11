@@ -3,7 +3,9 @@
 <head>
     <title>Singup Form - Facebook</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+
 </head>
 <body>
     <div class="abs">
@@ -13,21 +15,50 @@
             </div>
             <div><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yZ/r/C6QZ-pcv3Bd.png"></div>
         </div>
-        <div class="mainform">
+        <div class="mainform" id="mainform">
             <form>
                 <div class="row">
-                    <input type="text" id="firstname" name="firstname" placeholder="First name" class="input50w">
-                    <input type="text" id="lastname" name="lastname" placeholder="Surname" class="input50w">
+                        <div class="chatbox firstname hide" id="firstname-chatbox">
+                            <div class="nose" ></div>
+                            <p>Please enter your name</p>
+                        </div>
+                        <div style="width: 48%; position: relative;">
+                            <input type="text" id="firstname" name="firstname" placeholder="First name" class="input50w" >
+                            <i class="fa fa-exclamation-circle fa-input-text hide" id="firstname-check" style="color: rgb(168, 9, 9);"></i>
+                        </div>
+                        <div style="width: 48%; position: relative;">
+                            <input type="text" id="lastname" name="lastname" placeholder="Surname" class="input50w">
+                            <i class="fa fa-exclamation-circle fa-input-text hide" id="lastname-check" style="color: rgb(168, 9, 9);"></i>
+                        </div>
+                        <div class="chatbox-left lastname hide" id="lastname-chatbox">
+                            <div class="nose-left" ></div>
+                            <p>Please enter your surname</p>
+                        </div>
                 </div>
                 <div class="row">
-                    <input type="text" id="mobile-email " name="mobile-email" placeholder="Mobile number or email address" class="input100w">
+                    <div class="chatbox mobile-email hide" id="mobile-email-chatbox">
+                        <div class="nose"></div>
+                        <p>Invalid Email/Number</p>
+                    </div>
+                    <input type="text" id="mobile-email" name="mobile-email" placeholder="Mobile number or email address" class="input100w">
+                    <i class="fa fa-exclamation-circle fa-input-text wide hide" id="mobile-email-check" style="color: rgb(168, 9, 9);"></i>
                 </div>
                 <div class="row" style="margin-bottom: 10px;">
+                    <div class="chatbox password hide" id="password-chatbox">
+                        <div class="nose"></div>
+                        <p id="message_8">Password must be longer than 8 characters, and have both number and letters</p>
+                    </div>
                     <input type="password" id="password" name="password" placeholder="New password" class="input100w">
+                    <i class="fa fa-exclamation-circle fa-input-text wide password hide" id="password-check" style="color: rgb(168, 9, 9);"></i>
                 </div>
-                <span class="note">Date of birth:</span>
-                <div class="row" style="padding-top: 0; padding-bottom: 15px;">
+                <span class="note">Date of birth: </span>
+                <div class="row">
+                    <div class="chatbox dob hide" id="dob-chatbox">
+                        <div class="nose"></div>
+                        <p>Date of birth is invalid or empty</p>
+                    </div>
                     <select id="day" name="day" class="input33w select">
+                        <option value="">Day</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -61,6 +92,7 @@
                         <option value="31">31</option>
                     </select>
                     <select id="month" name="month" class="input33w select">
+                        <option value="">Month</option>
                         <option value="1">Jan</option>
                         <option value="2">Feb</option>
                         <option value="3">Mar</option>
@@ -75,6 +107,7 @@
                         <option value="12">Dec</option>
                     </select>
                     <select id="year" name="year" class="input33w select">
+                        <option value="">Year</option>
                         <option value="2000">2000</option>
                         <option value="2001">2001</option>
                         <option value="2002">2002</option>
@@ -103,31 +136,35 @@
                     </select>   
                 </div>
                 <span class="note">Gender:</span>
-                <div class="row" style="padding-top: 0;">
+                <div class="row">
                     <div class="input33w radio">
-                        <label for="female" id="female" name="gender">Female</label>
-                        <input type="radio" value="Female" name="gender">
+                        <label for="female" name="gender">Female</label>
+                        <input type="radio" value="Female" name="gender" id="female">
                     </div>
                     <div class="input33w radio">
-                        <label for="male" id="male" name="gender">Male</label>
-                        <input type="radio" value="Male" name="gender">
+                        <label for="male" name="gender">Male</label>
+                        <input type="radio" value="Male" name="gender" id="male">
                     </div>
                     <div class="input33w radio">
-                        <label for="custom" id="custom" name="gender">Custom</label>
-                        <input type="radio" value="Custom" name="gender">
+                        <label for="custom" name="gender">Custom</label>
+                        <input type="radio" value="Custom" name="gender" id="custom">
                     </div>
                 </div>
                 <div class="row">
-                    <select id="pronoun" name="pronoun" class="input100w select opt-gender">
+                    <div class="chatbox custom-gender hide" id="pronoun-chatbox">
+                        <div class="nose" ></div>
+                        <p>Please don't leave your pronoun empty</p>
+                    </div>
+                    <select id="pronoun" name="pronoun" class="input100w select opt-gender hide">
                         <option value="">Select your pronoun</option>
                         <option value="She">She: "Wish her a happy birthday!"</option>
                         <option value="He">He: "Wish him a happy birthday!"</option>
                         <option value="They">They: "Wish them a happy birthday!"</option>
                     </select>
                 </div>
-                <span class="note opt-gender">Your pronoun is visible to everyone.</span>
-                <div class="row opt-gender" style="padding-top: 0px;">
-                    <input type="text" id="optional-gender " name="optional-gender" placeholder="Gender (Optional)" class="input100w">
+                <span class="note opt-gender hide">Your pronoun is visible to everyone.</span>
+                <div class="row opt-gender hide" style="padding-top: 0px;">
+                    <input type="text" id="optional-gender" name="optional-gender" placeholder="Gender (Optional)" class="input100w">
                 </div>
                 <div class="note">People who use our service may have uploaded your contact information to Facebook. Learn more.</div>
                 <div class="note">By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</div>
