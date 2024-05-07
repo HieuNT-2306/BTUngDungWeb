@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Socket.io Chat</title>
+  <style>
+    /* Your styles here */
+  </style>
+</head>
+<body>
+  <h1 id="yourname"></h1>
+  <ul id="message"></ul>
+  <form id="form" action="">
+    <input id="roomId" placeholder="Enter Room ID" >
+    <input id="input" autocomplete="off" placeholder="Enter message"/>
+    <button>Send</button>
+  </form>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script>
+    const socket = io();
+    const messages = document.getElementById('message');
+    const form = document.getElementById('form');
+    const input = document.getElementById('input');
+    const roomIdInput = document.getElementById('roomId');
+    const name = document.getElementById('yourname');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (input.value) {
+        const roomId = roomIdInput.value;
+        const message = input.value;
+        if (roomId) {
+          socket.emit("join room", roomId, message);
+        } else {
+          alert("Please enter a room ID");
+        }
+        input.value = '';
+      }
+    });
+
+    socket.on('name', (username) => {
+      if (name.textContent === '') {
+        name.textContent = 'Your name is: ' + username;
+      }
+    });
+    socket.on('join room', (roomId) => {
+        if (roomIdInput.textContent === '') {
+          name.textContent += ', Please enter your room ID';
+        }
+        else (name.textContent += ', You are in room: ' + roomIdInput.value);
+    })
+
+    socket.on("receive message", (from, msg) => {
+      const item = document.createElement('li');
+      item.textContent = `${from}: ${msg}`;
+      messages.appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+  </script>
+</body>
+</html>
